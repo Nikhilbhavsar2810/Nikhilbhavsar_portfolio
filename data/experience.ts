@@ -1,0 +1,1 @@
+export const experience = [{ period: "Current", role: "Software Developer", company: "ABSS", description: "Building and contributing to MERN-stack web applications, translating business requirements into dependable interfaces and APIs." }];

@@ -1,0 +1,3 @@
+"use client";
+import { useRef } from "react";
+export function MagneticButton({ children, href, className = "" }: { children: React.ReactNode; href: string; className?: string }) { const ref = useRef<HTMLAnchorElement>(null); const move = (event: React.MouseEvent<HTMLAnchorElement>) => { const box = ref.current?.getBoundingClientRect(); if (!box || !ref.current) return; ref.current.style.transform = `translate(${(event.clientX - box.left - box.width / 2) * 0.18}px, ${(event.clientY - box.top - box.height / 2) * 0.18}px)`; }; return <a ref={ref} href={href} onMouseMove={move} onMouseLeave={() => { if (ref.current) ref.current.style.transform = "translate(0, 0)"; }} className={`magnetic ${className}`}>{children}</a>; }

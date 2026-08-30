@@ -1,0 +1,6 @@
+export type Project = { index: string; slug: string; name: string; type: string; description: string; longDescription: string; stack: string[]; accent: string };
+export const projects: Project[] = [
+  { index: "01", slug: "abss", name: "ABSS CRM & Books", type: "Enterprise platform", description: "A CRM and bookkeeping workspace built for practical business operations.", longDescription: "A full-stack platform focused on bringing customer relationships and financial workflows into one clear working environment.", stack: ["React", "Node.js", "Express", "MongoDB", "REST APIs"], accent: "violet" },
+  { index: "02", slug: "hollyhop", name: "HollyHop", type: "Manufacturing admin", description: "A TypeScript platform and admin panel for a toy manufacturing company.", longDescription: "A TypeScript-based management experience designed to support the administration of a toy manufacturing business.", stack: ["TypeScript", "React", "Admin Panel", "Business Operations"], accent: "lime" },
+  { index: "03", slug: "job-seeking", name: "Job Seeking", type: "Web application", description: "A MERN application for a more deliberate job-search experience.", longDescription: "A full-stack job-seeking application built around an approachable, responsive experience for managing the search process.", stack: ["MongoDB", "Express", "React", "Node.js"], accent: "orange" },
+];
