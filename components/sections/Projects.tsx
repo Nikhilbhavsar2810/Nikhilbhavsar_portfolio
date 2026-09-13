@@ -1,3 +1,38 @@
+"use client";
+
 import { projects } from "@/data/projects";
 import { ProjectCard } from "@/components/projects/ProjectCard";
-export function Projects() { return <section className="section projects" id="work"><p className="eyebrow">04 / Selected work</p><div className="projects-heading"><h2>Things I&apos;ve helped <em>bring to life.</em></h2><p>A selection of product work across business software, manufacturing, and job search.</p></div><div className="project-grid">{projects.map((project) => <ProjectCard project={project} key={project.slug} />)}</div></section>; }
+import { Reveal } from "@/components/ui/Reveal";
+
+export function Projects() {
+  return (
+    <section className="section" id="projects">
+      <Reveal>
+        <p className="eyebrow">Projects</p>
+      </Reveal>
+
+      <div className="projects-header">
+        <Reveal delay={0.1}>
+          <h2 className="section-heading">
+            Things I&apos;ve helped{" "}
+            <span className="gradient-text">build.</span>
+          </h2>
+        </Reveal>
+        <Reveal delay={0.2}>
+          <p>
+            A selection of professional work across business software, e-commerce,
+            education and manufacturing.
+          </p>
+        </Reveal>
+      </div>
+
+      <div className="project-list">
+        {projects.map((project, i) => (
+          <Reveal key={project.slug} delay={0.1 + i * 0.1}>
+            <ProjectCard project={project} />
+          </Reveal>
+        ))}
+      </div>
+    </section>
+  );
+}
